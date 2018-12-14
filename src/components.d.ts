@@ -12,58 +12,64 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface UcSpinner {}
+  interface UcSpinnerAttributes extends StencilHTMLAttributes {}
+
+  interface UcStockFinder {}
+  interface UcStockFinderAttributes extends StencilHTMLAttributes {
+    'onUcSymbolSelected'?: (event: CustomEvent<string>) => void;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+
+  interface UcStockPrice {
+    'stockInput': string;
+  }
+  interface UcStockPriceAttributes extends StencilHTMLAttributes {
+    'stockInput'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'UcSpinner': Components.UcSpinner;
+    'UcStockFinder': Components.UcStockFinder;
+    'UcStockPrice': Components.UcStockPrice;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'uc-spinner': Components.UcSpinnerAttributes;
+    'uc-stock-finder': Components.UcStockFinderAttributes;
+    'uc-stock-price': Components.UcStockPriceAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLUcSpinnerElement extends Components.UcSpinner, HTMLStencilElement {}
+  var HTMLUcSpinnerElement: {
+    prototype: HTMLUcSpinnerElement;
+    new (): HTMLUcSpinnerElement;
+  };
+
+  interface HTMLUcStockFinderElement extends Components.UcStockFinder, HTMLStencilElement {}
+  var HTMLUcStockFinderElement: {
+    prototype: HTMLUcStockFinderElement;
+    new (): HTMLUcStockFinderElement;
+  };
+
+  interface HTMLUcStockPriceElement extends Components.UcStockPrice, HTMLStencilElement {}
+  var HTMLUcStockPriceElement: {
+    prototype: HTMLUcStockPriceElement;
+    new (): HTMLUcStockPriceElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'uc-spinner': HTMLUcSpinnerElement
+    'uc-stock-finder': HTMLUcStockFinderElement
+    'uc-stock-price': HTMLUcStockPriceElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'uc-spinner': HTMLUcSpinnerElement;
+    'uc-stock-finder': HTMLUcStockFinderElement;
+    'uc-stock-price': HTMLUcStockPriceElement;
   }
 
 

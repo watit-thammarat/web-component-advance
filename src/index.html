@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <script src="/build/mycomponent.js"></script>
+    <style>
+      /* html {
+        --color-primary: #3b013b;
+        --color-primary-inverse: #fff;
+        --color-primary-highlight: #750175;
+      } */
+    </style>
+  </head>
+  <body>
+    <uc-stock-price stock-input="AAPL"></uc-stock-price>
+    <uc-stock-finder></uc-stock-finder>
 
-</head>
-<body>
+    <!--
+      <script>
+        const stockFinderEl = document.querySelector('uc-stock-finder');
+        const stockPriceEl = document.querySelector('uc-stock-price');
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
-</body>
+        stockFinderEl.addEventListener('ucSymbolSelected', e => {
+          console.log(e);
+        });
+      </script>
+    -->
+  </body>
 </html>
